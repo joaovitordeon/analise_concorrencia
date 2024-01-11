@@ -4,6 +4,12 @@ import streamlit as st
 # Configurações gerais do Streamlit
 st.set_page_config(page_title='Análise concorrência', page_icon=':chart_with_upwards_trend:', layout="wide")
 
+st.sidebar.title(':black[**Análise de concorrência**]')
+st.sidebar.markdown('Empresas no Google Meu Negócio \n')
+for i in range(3):
+    st.sidebar.text('\n')
+
+
 @st.cache_data
 def get_data():
     df = pd.read_csv("amostra_google_empresas.csv")
@@ -19,7 +25,7 @@ df = get_data()
 
 # select box para os estados
 estado = st.sidebar.selectbox(
-    "Selecione o estado:",
+    ":violet[**Selecione o estado:**]",
     ['Todos'] + df.Estado.unique().tolist(),
 )
 
@@ -31,7 +37,7 @@ if df_estado.empty:
 
 # select box para as cidades
 cidade = st.sidebar.selectbox(
-    "Selecione a cidade:",
+    ":violet[**Selecione a cidade:**]",
     ['Todas'] + df_estado.Cidade.unique().tolist(),
 )
 
@@ -43,7 +49,7 @@ if df_cidade.empty:
 
 # select box para as categorias
 categoria = st.sidebar.selectbox(
-    "Selecione a categoria:",
+    ":violet[**Selecione a categoria:**]",
     ['Todas'] + df_cidade.Categoria.unique().tolist(),
 )
 
@@ -83,10 +89,19 @@ def calc_proporcao(numerador):
 grid[0].metric("Proporção de empresas com **avaliação**", value=calc_proporcao(df_cat[df_cat['Avaliacao']!=''].shape[0]))
 grid[1].metric("Proporção de empresas com **Telefone**", value=calc_proporcao(df_cat[df_cat['Telefone']!=''].shape[0]))
 grid[2].metric("Proporção de empresas com **Site**", value=calc_proporcao(df_cat[df_cat['Site']!=''].shape[0]))
-st.text('')
+
+for i in range(3):
+    st.text('\n')
 
 #------------------------------------DADOS-----------------------------------------
 #st.header(":violet[Dados]")
-with st.expander("Dados"):
+with st.expander("Clique para mostrar os dados"):
     st.dataframe(df_cat.reset_index(drop=True), use_container_width=True)
 
+
+#-----------------------------
+for i in range(14):
+    st.sidebar.text('\n')
+
+st.sidebar.divider()
+st.sidebar.text("Desenvolvido por J V L DEON ASSESSORIA")
