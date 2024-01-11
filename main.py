@@ -64,7 +64,7 @@ grid = st.columns([1, 1, 1])
 grid[0].markdown(f"Estado selecionado: :violet[**{estado}**]")
 grid[1].markdown(f"Cidade selecionada: :violet[**{cidade}**]")
 grid[2].markdown(f"Categoria selecionada: :violet[**{categoria}**]")
-st.text('')
+st.text('\n')
 
 #------------------------------------INDICADORES--------------------------------------
 st.header(":violet[Indicadores]")
