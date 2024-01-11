@@ -31,7 +31,7 @@ estado = st.sidebar.selectbox(
 
 # se for == 'Todos' vai retornar um df vazio
 df_estado = df[(df["Estado"] == estado)]
-# se for vazio, trazer tudo
+# se for vazio, trazer todos os dados
 if df_estado.empty:
     df_estado = df
 
@@ -43,7 +43,7 @@ cidade = st.sidebar.selectbox(
 
 # se for == 'Todas' vai retornar um df vazio
 df_cidade = df_estado[(df_estado["Cidade"] == cidade)]
-# se for vazio, trazer tudo
+# se for vazio, trazer todos os dados
 if df_cidade.empty:
     df_cidade = df_estado
 
@@ -55,7 +55,7 @@ categoria = st.sidebar.selectbox(
 
 #se for == 'Todas' vai retornar um df vazio
 df_cat = df_cidade[df_cidade['Categoria']==categoria]
-# se for vazio, trazer tudo
+# se for vazio, trazer todos os dados
 if df_cat.empty:
     df_cat = df_cidade
 
@@ -100,8 +100,16 @@ with st.expander("Clique para mostrar os dados"):
 
 
 #-----------------------------
-for i in range(14):
+for i in range(3):
     st.sidebar.text('\n')
 
+#st.sidebar.text("Desenvolvido por J V L DEON ASSESSORIA")
 st.sidebar.divider()
-st.sidebar.text("Desenvolvido por J V L DEON ASSESSORIA")
+st.sidebar.markdown(
+    '<h6>Made in &nbsp<img src="https://streamlit.io/images/brand/streamlit-mark-color.png" alt="Streamlit logo" height="16">&nbsp by J V L DEON ASSESSORIA</h6>',
+    unsafe_allow_html=True,
+)
+st.sidebar.markdown(
+    '<div style="margin-top: 0.75em;"><a href="https://www.buymeacoffee.com/joaovitordeon" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a></div>',
+    unsafe_allow_html=True,
+)
