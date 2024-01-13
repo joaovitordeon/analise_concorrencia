@@ -100,16 +100,18 @@ with st.expander("Clique para mostrar os dados"):
 
 
 #-----------------------------
-for i in range(3):
+for i in range(5):
     st.sidebar.text('\n')
 
-#st.sidebar.text("Desenvolvido por J V L DEON ASSESSORIA")
-st.sidebar.divider()
 st.sidebar.markdown(
-    '<h6>Made in &nbsp<img src="https://streamlit.io/images/brand/streamlit-mark-color.png" alt="Streamlit logo" height="16">&nbsp by J V L DEON ASSESSORIA</h6>',
+    '<h5>Made in &nbsp<img src="https://streamlit.io/images/brand/streamlit-mark-color.png" alt="Streamlit logo" height="30">&nbsp by J V L DEON ASSESSORIA</h5>',
     unsafe_allow_html=True,
 )
 st.sidebar.markdown(
-    '<div style="margin-top: 0.75em;"><a href="https://www.buymeacoffee.com/joaovitordeon" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a></div>',
+    '<h5>Contact e-mail:  joaovitordeon@gmail.com</h5>',
+    unsafe_allow_html=True,
+)
+st.sidebar.markdown(
+    '<div style="margin-top: 1.5em;"><a href="https://www.buymeacoffee.com/joaovitordeon" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="45" width="184"></a></div>',
     unsafe_allow_html=True,
 )
